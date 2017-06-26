@@ -90,19 +90,19 @@ class UserRepository extends EntityRepository implements UserProviderInterface
         $createdAt  = isset($userArr['created_at']) ? \DateTime::createFromFormat(self::DATE_FORMAT, $userArr['created_at']) : null;
 
         if ($username) {
-            $this->username = $username;
+            $user->username = $username;
         }
 
         if ($password) {
-            $this->password = $password;
+            $user->password = $password;
         }
 
         if ($roles) {
-            $this->roles = $roles;
+            $user->roles = $roles;
         }
 
         if ($createdAt) {
-            $this->createdAt = $createdAt;
+            $user->createdAt = $createdAt;
         }
 
         return $user;

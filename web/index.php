@@ -28,7 +28,7 @@ $app->get('/login', function(\Symfony\Component\HttpFoundation\Request $request)
 
 $app->get('/', function() use($app) {
     return $app['twig']->render('index.twig',[
-        'username' => $app['security']->getToken()->getUser()
+        'username' =>  $app['security.token_storage']->getToken()->getUser()
     ]);
 });
 
